@@ -1,0 +1,45 @@
+<div #loggedOut>
+    <div style="padding: 20px;"></div>
+    <div class="container d-flex justify-content-center">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+                    <div class="form-group">
+                        <label for="addressLine">address line</label>
+                        <input type="text" name="addressLine" id="addressLine" class="form-control form-control-lg" [(ngModel)]="addressLine" >
+                    </div>
+                    <div class="form-group">
+                        <label for="city">city</label>
+                        <input type="text" name="city" id="city" class="form-control form-control-lg" [(ngModel)]="city" >
+                    </div>
+                    <div class="form-group">
+                        <label for="country">country</label>
+                        <input type="text" name="country" id="country" class="form-control form-control-lg" [(ngModel)]="country" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">phone</label>
+                        <input type="text" name="phone" id="phone" class="form-control form-control-lg" [(ngModel)]="phone" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postalCode">postal code</label>
+                        <input type="text" name="postalCode" id="postalCode" class="form-control form-control-lg" [(ngModel)]="postalCode" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">state</label>
+                        <input type="text" name="state" id="state" class="form-control form-control-lg" [(ngModel)]="state" >
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                        <i class="lnr lnr-enter"></i> Update Info</button>
+                        <button class="btn btn-outline-primary btn-block" (click)="back()">
+                        <i class="lnr lnr-arrow-left"></i> Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div></div>
+<ng-template *ngIf="isLogged; else loggedOut" >
+</ng-template>

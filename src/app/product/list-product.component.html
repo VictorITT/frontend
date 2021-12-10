@@ -1,0 +1,40 @@
+<div style="padding: 20px" class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">View</th>
+                <th scope="col" *ngIf="isAdmin">Edit</th>
+                <th scope="col" *ngIf="isAdmin">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}€</td>
+                <td>{{product.image}}</td>
+                <td><button class="btn btn-outline-primary" routerLink="/detail/{{product.id}}"><i class="lnr lnr-eye"></i> View</button></td>
+                <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/edit/{{product.id}}"><i class="lnr lnr-pencil"></i> Edit</button></td>
+                <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="delete(product.id)"><i class="lnr lnr-trash"></i> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container d-flex justify-content-center">
+        <div class="card" style="width: 30rem;">
+            <div class="card-header">
+                <div class="mt-3" *ngIf="isAdmin">
+                    <button class="btn btn-outline-success btn-block" routerLink="/new">
+                        <i class="lnr lnr-file-add"></i> New Product</button>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-outline-primary btn-block" (click)="back()">
+                         <i class="lnr lnr-arrow-left"></i> Back</button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

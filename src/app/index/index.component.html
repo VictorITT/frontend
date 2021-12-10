@@ -1,0 +1,436 @@
+<header id="home" class="welcome-hero">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+       <ol class="carousel-indicators">
+        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#header-carousel" data-slide-to="1"></li>
+        <li data-target="#header-carousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="single-slide-item slide1">
+            <div class="container">
+              <div class="welcome-hero-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-txt">
+                        <h4>antarctica - album - 2019</h4>
+                        <h2>kraken</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiuiana smod tempor  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-img">
+                        <img src="assets/images/slider_kraken.jpg" alt="slider image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="single-slide-item slide2">
+            <div class="container">
+              <div class="welcome-hero-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-txt">
+                        <h4>antarctica - album - 2019</h4>
+                        <h2>she the death</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiuiana smod tempor  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-img">
+                        <img src="assets/images/slider_she-the-death.jpg" alt="slider image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="single-slide-item slide3">
+            <div class="container">
+              <div class="welcome-hero-content">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-txt">
+                        <h4>antarctica - album - 2019</h4>
+                        <h2>blood for blood</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiuiana smod tempor  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="single-welcome-hero">
+                      <div class="welcome-hero-img">
+                        <img src="assets/images/slider_blood-for-blood.jpg" alt="slider image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-area">
+      <div class="header-area">
+          <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+              <div class="container">            
+                  <div class="attr-nav">
+                      <ul>
+                        <li class="nav-item" *ngIf="isLogged; else loggedOut">
+                            <i>Welcome, {{username}}</i>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" >
+                                <span class="lnr lnr-user"></span>
+                            </a>
+                            <ul class="dropdown-menu cart-list s-cate">
+                                <li class="nav-item" *ngIf="isLogged">
+                                    <div class="cart-list-txt">
+                                        <h6><a routerLink="/userinfo"><i class="lnr lnr-user"></i> user info</a></h6>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item" *ngIf="!isLogged">
+                                    <div class="cart-list-txt">
+                                        <h6><a routerLink="/login"><i class="lnr lnr-user"></i> log in</a></h6>
+                                    </div>
+                                </li>
+                                
+                                <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+                                    <div class="cart-list-txt">
+                                        <h6><a style="cursor: pointer;"><i class="lnr lnr-exit"></i> log out</a></h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" *ngIf="isAdmin">
+                            <a data-toggle="dropdown" >
+                                <span class="lnr lnr-cog"></span>
+                            </a>
+                            <ul class="dropdown-menu cart-list s-cate">
+                                <li class="single-cart-list">
+                                    <div class="cart-list-txt">
+                                        <h6><a  routerLink="/list"><i class="lnr lnr-list"></i> list products</a></h6>
+                                    </div>
+                                </li>
+                                <li class="single-cart-list">
+                                    <div class="cart-list-txt">
+                                        <h6><a routerLink="/new"><i class="lnr lnr-plus-circle"></i> new product</a></h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" >
+                                <span class="lnr lnr-cart"></span>
+                                <span class="badge badge-bg-1">{{cartProducts.length}}</span>
+                            </a>
+                                <ul class="dropdown-menu cart-list s-cate"  >
+                                  <li class="single-cart-list" *ngFor="let product of cartProducts">
+                                        <a class="photo"><img src="{{product.image}}" class="cart-thumb" alt="image" /></a>
+                                        <div class="cart-list-txt">
+                                            <h6>{{product.name}}</h6>
+                                            <p><span class="price">{{product.price}}€</span></p>
+                                        </div>
+                                        <div class="cart-close" (click)="deleteFromCart(product)">
+                                            <span class="lnr lnr-cross"></span>
+                                      </div>
+                                  </li>
+                                  <li class="total">
+                                    <span *ngIf=euro>{{total}} €</span>
+                                    <button class="btn-cart pull-right" (click)="buy()">Buy</button>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                          <i class="lnr lnr-menu"></i>
+                      </button>
+                      <a class="navbar-brand" href="#">Arakna</a>
+                  </div>
+                  <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                      <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                          <li class=" scroll active"><a href="#home">home</a></li>
+                          <li class="scroll"><a href="#live">live</a></li>
+                          <li class="scroll"><a href="#music">music</a></li>
+                          <li class="scroll"><a href="#videos">videos</a></li>
+                          <li class="scroll"><a href="#news">news</a></li>
+                          <li class="scroll"><a href="#shop">shop</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+      </div>
+        <div class="clearfix"></div>
+    </div>
+  </header>
+  <section id="populer-products" class="populer-products">
+    <div class="container">
+    </div>
+  </section>
+  <section id="live" class="new-arrivals">
+    <div class="container">
+      <div class="section-header">
+        <h2>live</h2>
+      </div>
+      <div class="new-arrivals-content">
+        <div class="row">
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_madrid.jpg" alt="madrid">
+              </div>
+              <h4><a>madrid</a></h4>
+              <p class="arrival-product-price">april 1st - 20:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_barcelona.jpg" alt="barcelona">
+              </div>
+              <h4><a>barcelona</a></h4>
+              <p class="arrival-product-price">may 4th - 18:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_rome.jpg" alt="rome">
+              </div>
+              <h4><a>rome</a></h4>
+              <p class="arrival-product-price">may 30th - 19:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_milan.jpg" alt="milan">
+              </div>
+              <h4><a>milan</a></h4>
+              <p class="arrival-product-price">june 22nd - 21:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_paris.jpg" alt="paris">
+              </div>
+              <h4><a>paris</a></h4>
+              <p class="arrival-product-price">july 10th - 17:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_brussels.jpg" alt="brussels">
+              </div>
+              <h4><a>brussels</a></h4>
+              <p class="arrival-product-price">august 13th - 12:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_amsterdam.jpg" alt="amsterdam">
+              </div>
+              <h4><a>amsterdam</a></h4>
+              <p class="arrival-product-price">september 15th - 20:00</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="assets/images/concert_berlin.jpg" alt="berlin">
+              </div>
+              <h4><a>berlin</a></h4>
+              <p class="arrival-product-price">october 8th - 16:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="music" class="feature">
+    <div class="container">
+      <div class="section-header">
+        <h2>albums & singles</h2>
+      </div>
+      <div class="feature-content">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="single-feature">
+              <img src="assets/images/album_antarctica.jpg" alt="antarctica album">
+              <img src="assets/images/code_antarctica.png" alt="antarctica code">
+              <div class="single-feature-txt text-center">
+                <h3><a href="https://open.spotify.com/album/3auPPPbYk8jeCxhPTwH5kd">Antarctica - Album - 2019</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-feature">
+              <img src="assets/images/single_the-traveller.jpg" alt="the traveller single">
+              <img src="assets/images/code_the-traveller.png" alt="the traveller code">
+              <div class="single-feature-txt text-center">
+                <h3><a href="https://open.spotify.com/album/43GWQEEx0iJeZJ5mnrx1Na">The Traveller - Single - 2018</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-feature">
+              <img src="assets/images/single_northlands.jpg" alt="northlands single">
+              <img src="assets/images/code_northlands.png" alt="northlands code">
+              <div class="single-feature-txt text-center">
+                <h3><a href="https://open.spotify.com/album/3Uewq9IEX7kRUKd6FnwCJ6">Northlands - Single - 2018</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-feature">
+              <img src="assets/images/single_white-wolves.jpg" alt="white wolves single">
+              <img src="assets/images/code_white-wolves.png" alt="white wolves code">
+              <div class="single-feature-txt text-center">
+                <h3><a href="https://open.spotify.com/album/32GkegQfQCdseVzM4DwWHV">White Wolves - Single - 2017</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="videos" class="blog">
+    <div class="container">
+        <div class="section-header">
+            <h2>videos</h2>
+        </div>
+        <div class="blog-content">
+            <div class="wise-iframe-wrapper">
+                <iframe src="https://www.youtube.com/embed/rQ_nCN_5Peg" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>    
+  </section>
+  <section id="news" class="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2>news</h2>
+      </div>
+      <div class="blog-content">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <img src="assets/images/photo_01.jpg" alt="blog image">
+                <div class="single-blog-img-overlay"></div>
+              </div>
+              <div class="single-blog-txt">
+                <h2><a>Concert #1</a></h2>
+                <h3>5th December 2021</h3>
+                <p>
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.... 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <img src="assets/images/photo_02.jpg" alt="blog image">
+                <div class="single-blog-img-overlay"></div>
+              </div>
+              <div class="single-blog-txt">
+                <h2><a>Concert #2</a></h2>
+                <h3>5th December 2021</h3>
+                <p>
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.... 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="single-blog">
+              <div class="single-blog-img">
+                <img src="assets/images/photo_03.jpg" alt="blog image">
+                <div class="single-blog-img-overlay"></div>
+              </div>
+              <div class="single-blog-txt">
+                <h2><a>Concert #3</a></h2>
+                <h3>5th December 2021</h3>
+                <p>
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.... 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+  <section id="shop" class="new-arrivals">
+    <div class="container">
+      <div style="padding: 40px" class="section-header">
+        <h2>shop</h2>
+        <p *ngIf="!isLogged">Log in to buy our merch!</p>
+      </div>
+        <div class="col-md-3 col-sm-4" *ngFor="let product of products">
+          <div class="single-new-arrival">
+            <div class="single-new-arrival-bg">
+              <img src="{{product.image}}" alt="product image">
+              <div class="new-arrival-cart" (click)="addToCart(product)">
+                <p>
+                  <span class="lnr lnr-cart"></span>
+                  <a href="#">add <span>to </span> cart</a>
+                </p>
+              </div>
+            </div>
+            <h4><a>{{product.name}}</a></h4>
+            <p class="arrival-product-price">{{product.price}}€</p>
+            <div *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/edit/{{product.id}}"><i class="lnr lnr-pencil"></i> Edit</button></div>
+            <div *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="delete(product.id)"><i class="lnr lnr-trash"></i> Delete</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <footer id="footer"  class="footer">
+    <div class="container">
+      <div class="hm-footer text-center">
+        <div class="footer-social">
+          <a href="https://www.youtube.com/c/Arakna_official"><img src="assets/images/youtube.png"> YouTube &nbsp;</a>  
+          <a href="https://www.instagram.com/arakna_official/"><img src="assets/images/instagram.png"> Instagram &nbsp;</a>
+          <a href="https://open.spotify.com/artist/357dbnTdZuRt1fsvLsV4g3"><img src="assets/images/spotify.png"> Spotify </a> 
+        </div>
+      </div>
+    </div>
+    <div id="scroll-Top">
+      <div class="return-to-top">
+        <i class="lnr lnr-chevron-up" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+      </div>
+    </div>
+      </footer>
+<div class="container">
+    <ng-template #loggedOut></ng-template>
+</div>

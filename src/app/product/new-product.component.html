@@ -1,0 +1,25 @@
+<div style="padding: 20px;"></div>
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 30rem;">
+        <div class="card-header">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="name"><h2>Name</h2></label>
+                    <input type="text" class="form-control form-control-lg" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price"><h2>Price</h2></label>
+                    <input type="number" class="form-control form-control-lg" id="price" name="price" [(ngModel)]="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="image"><h2>Image</h2></label>
+                    <input type="text" class="form-control form-control-lg" id="image" name="image" [(ngModel)]="image" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="lnr lnr-pencil"></i> Create</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/list">
+                    <i class="lnr lnr-arrow-left"></i> Back</button>
+            </form>
+        </div>
+    </div>
+</div>
